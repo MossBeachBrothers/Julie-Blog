@@ -9,9 +9,9 @@ const Header = () => (
         variant="h4"
         style={{
           fontWeight: 'bold',
-          fontFamily: "'Dancing Script', cursive", // Fully artistic font for the title
+          fontFamily: "'Dancing Script', cursive",
           fontSize: '2.8rem',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Subtle shadow for effect
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
           color: '#ffffff',
         }}
       >
@@ -22,7 +22,7 @@ const Header = () => (
       <Typography
         variant="subtitle1"
         style={{
-          fontFamily: "'Playfair Display', serif", // Stylish, semi-artistic font for subtitle
+          fontFamily: "'Comic Sans MS', 'Comic Sans', cursive", // More fun font
           fontSize: '1.5rem',
           color: '#e3f2fd', // Light pastel blue for contrast
           marginTop: '5px',
