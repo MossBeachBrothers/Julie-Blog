@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <AppBar position="static" style={{ backgroundColor: '#1976d2', padding: '10px 0' }}>
@@ -22,15 +23,21 @@ const Header = () => (
       <Typography
         variant="subtitle1"
         style={{
-          fontFamily: "'Comic Sans MS', 'Comic Sans', cursive", // More fun font
-          fontSize: '1.5rem',
-          color: '#e3f2fd', // Light pastel blue for contrast
+          fontFamily: "'Indie Flower', cursive",
+          fontSize: '1.6rem',
+          color: '#e3f2fd',
           marginTop: '5px',
           textAlign: 'center',
         }}
       >
         Personal Blog for Education on Medical and Biological Concepts
       </Typography>
+
+      {/* Navigation Links */}
+      <div style={{ marginTop: '10px' }}>
+        <Link to="/" style={{ margin: '0 10px', color: '#e3f2fd', textDecoration: 'none', fontSize: '1.2rem' }}>Home</Link>
+        <Link to="/contact" style={{ margin: '0 10px', color: '#e3f2fd', textDecoration: 'none', fontSize: '1.2rem' }}>Contact</Link>
+      </div>
     </Toolbar>
   </AppBar>
 );
