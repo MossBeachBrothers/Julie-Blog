@@ -7,11 +7,11 @@ const Header = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`, // Use the imported image
+        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '300px', // Fixed height for the header
+        height: '300px',
         color: '#ffffff',
       }}
     >
@@ -19,7 +19,7 @@ const Header = () => {
         position="static"
         style={{
           backgroundColor: 'transparent',
-          boxShadow: 'none', // Remove AppBar shadow
+          boxShadow: 'none',
         }}
       >
         <Toolbar style={{ flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
@@ -41,11 +41,11 @@ const Header = () => {
           </Typography>
 
           {/* Subtitle */}
-          {/* <Typography
+          <Typography
             variant="subtitle1"
             style={{
-              fontFamily: "'Indie Flower', cursive",
-              fontSize: '1.8rem',
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: '1.5rem',
               color: '#e3f2fd',
               marginTop: '15px',
               textAlign: 'center',
@@ -56,7 +56,7 @@ const Header = () => {
             }}
           >
             Personal Blog for Education on Medical and Biological Concepts
-          </Typography> */}
+          </Typography>
 
           {/* Navigation Links */}
           <div
@@ -87,6 +87,23 @@ const Header = () => {
               onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
             >
               Home
+            </Link>
+            <Link
+              to="/about"
+              style={{
+                padding: '10px 15px',
+                color: '#e3f2fd',
+                textDecoration: 'none',
+                fontSize: '1.2rem',
+                border: '2px solid #e3f2fd',
+                borderRadius: '5px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                transition: 'transform 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+            >
+              About
             </Link>
             <Link
               to="/contact"
