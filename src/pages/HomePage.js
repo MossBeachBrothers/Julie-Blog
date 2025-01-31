@@ -1,25 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import blogs from '../data/blogs.json';
 import BlogCard from '../components/BlogCard';
-import { Grid } from '@mui/material';
+import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
-const HomePage = () => (
-  <div
-    className="container"
-    style={{
-      padding: '20px',
-      backgroundColor: '#e3f8ff', // Baby blue background color
-      minHeight: '100vh', // Ensure the background covers the full height
-    }}
-  >
-    <Grid container spacing={3}>
-      {blogs.map((blog) => (
-        <Grid item xs={12} sm={6} md={4} key={blog.id}>
-          <BlogCard blog={blog} />
-        </Grid>
-      ))}
-    </Grid>
-  </div>
-);
+const HomePage = () => {
+  const [sortOrder, setSortOrder] = useState('mostRecent');
+
+  const sortedBlogs = [...blogs].sort((a, b) => 
+    sortOrder === 'mostRecent' ? b.id - a.id : a.id - b.id
+  );
+
+  return (
+    <div
+      className="container"
+      style={{
+        padding: '20px',
+        backgroundColor: '#e3f8ff',
+        minHeight: '100vh',
+      }}
+    >
+      <FormControl variant="outlined" style={{ marginBottom: '20px', minWidth: 200 }}>
+        <InputLabel>Sort By</InputLabel>
+        <Select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+          label="Sort By"
+        >
+          <MenuItem value="mostRecent">Most Recent</MenuItem>
+          <MenuItem value="leastRecent">Least Recent</MenuItem>
+        </Select>
+      </FormControl>
+
+      <Grid container spacing={3}>
+        {sortedBlogs.map((blog) => (
+          <Grid item xs={12} sm={6} md={4} key={blog.id}>
+            <BlogCard blog={blog} />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
+};
 
 export default HomePage;
