@@ -14,12 +14,12 @@ const HomePage = () => {
     <div
       className="container"
       style={{
-        padding: '20px',
+        padding: '10px',
         backgroundColor: '#e3f8ff',
         minHeight: '100vh',
       }}
     >
-      <FormControl variant="outlined" style={{ marginBottom: '20px', minWidth: 200 }}>
+      <FormControl variant="outlined" style={{ marginBottom: '10px', minWidth: 180 }}>
         <InputLabel>Sort By</InputLabel>
         <Select
           value={sortOrder}
@@ -31,9 +31,9 @@ const HomePage = () => {
         </Select>
       </FormControl>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={1.5}>
         {sortedBlogs.map((blog) => (
-          <Grid item xs={12} sm={6} md={4} key={blog.id}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={blog.id}>
             <BlogCard blog={blog} />
           </Grid>
         ))}
