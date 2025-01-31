@@ -135,4 +135,61 @@
         "content": "This temporal revolution in MS correlates fragmentation patterns with precise dissociation timelines, revealing reaction pathways previously obscured by ensemble averaging. Using pulsed laser acceleration (10fs intervals) and time-stamped ion detection, Chronometric MS achieves 50as (atto-second) temporal resolution for bond cleavage analysis.\n\nThe technique's 2m long flight tube incorporates 14 retarding field analyzers that measure ion velocity changes every 10ns. Machine learning algorithms reconstruct 3D potential energy surfaces from deceleration profiles, recently mapping the complete dissociation pathway of protonated ubiquitin (8,565Da) with 0.01Å spatial resolution.\n\nKey discoveries include observation of non-ergodic peptide fragmentation where vibrational energy redistributes faster than dissociation timescales. This challenges the fundamental Rice-Ramsperger-Kassel-Marcus (RRKM) theory, with implications for predicting MS/MS spectra of unknown compounds.\n\nIn pharmaceutical analysis, Chronometric MS differentiated polymorphic drug crystals through characteristic cleavage chronograms, identifying a previously unknown ritonavir metastable form during tablet dissolution studies. The temporal dimension also enables novel 'reaction cinema' visualizations, recently used to map the stepwise oxidation of LDL particles in atherosclerosis development.\n\nFuture developments aim to combine attosecond X-ray pulses for simultaneous time-resolved structural and mass analysis, potentially creating molecular movies of enzymatic reactions at native MS sensitivity levels.",
         "image": "default.jpg"
     }
+    ,
+    {
+        "id": 20,
+        "title": "4D Trapped Ion Mobility Mass Spectrometry",
+        "description": "Structural proteomics revolutionized through anisotropic collision cross-section mapping",
+        "content": "This fourth-dimensional separation technique combines cyclic IMS with orthogonal collisional activation to resolve isoenergetic conformers. The 1m cyclic drift tube (100 Torr N₂) applies alternating electric fields (500-1500 V/cm) to separate ions based on directional CCS differences (ΔCCS >2Å²).\n\nKey innovation lies in the rotating ion gate that samples 36 angular orientations per cycle, creating a spherical CCS profile database. Machine learning correlates these 4D mobility patterns (m/z, CCS, orientation, fragmentation) with molecular dynamics simulations, achieving 92% accuracy in protein fold prediction for <30kDa proteins.\n\nRecent studies revealed transient binding pockets in KRAS oncoproteins through detection of 0.7% CCS variations during IM cycles. Clinical applications include differentiation of tau protein isoforms in Alzheimer's CSF, identifying 3-repeat vs 4-repeat tau aggregates with 99.1% specificity using deep neural network analysis of 4D heatmaps.\n\nThe system's high-throughput mode processes 2000 proteins/hour while maintaining 0.01Da mass accuracy and 0.5% CCS precision. A breakthrough application mapped allosteric changes in GPCRs during ligand binding, capturing intermediate states lasting <1ms through real-time ion mobility deconvolution algorithms.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 21,
+        "title": "Plasmonic NanoLC-Orbitrap Fusion",
+        "description": "Single-molecule sensitivity achieved through surface-enhanced Raman scattering detection",
+        "content": "This hybrid system combines 50nm plasmonic nanopillar LC columns with modified Orbitrap detectors, enabling attomolar sensitivity without pre-concentration. The nanoLC columns feature gold nanorod-packed channels (200μm ID) that generate 10⁸ electric field enhancements, boosting SERS signals during elution.\n\nInnovations include:\n- Dielectrophoretic analyte focusing (10MHz AC fields)\n- Graphene-encapsulated SERS tags resistant to photodegradation\n- Real-time spectral deconvolution using quantum neural networks\n\nIn proteomic applications, the system identified 8200 proteins from single HeLa cells, surpassing conventional methods by 3 orders of magnitude. The 25ms detection speed enables tracking of post-translational modification dynamics, recently capturing kinase activation waves during T-cell receptor signaling.\n\nA landmark study achieved sequencing of intact proteins up to 150kDa through combination of top-down MS and plasmonic-enhanced fragmentation. The platform's 0.02yoctomole detection limit (3σ) permits analysis of rare circulating tumor cells without amplification biases inherent in PCR-based methods.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 22,
+        "title": "Cryogenic LC-Magnetic Resonance Mass Spectrometry",
+        "description": "Nuclear spin state analysis unlocks isotopic fine structure determination",
+        "content": "Operating at 4K, this superconducting system correlates LC elution times with nuclear spin transitions detected through SQUID-based magnetometry. The 14T magnet maintains electron spins in coherent states for 10 minutes, allowing ultra-high resolution (15mDa @ m/z 500) measurement of isotopic splittings.\n\nBreakthrough capabilities include:\n- Differentiation of ¹³C vs ¹⁵N isotopes in complex mixtures\n- Detection of neutrinos through isotopic anomaly patterns\n- Quantum computing-assisted prediction of nuclear spin interactions\n\nIn environmental analysis, the technique identified 17 novel PFAS isomers through their characteristic ¹⁹F-¹⁹F coupling patterns (J = 238Hz). Pharmaceutical applications revealed hidden degradation pathways in monoclonal antibodies by tracking deuterium/hydrogen exchange at single-amino acid resolution.\n\nThe system's 10⁶ dynamic range and 0.0001Da mass accuracy enable unprecedented insights into metabolic flux analysis. Recent studies mapped ³⁶S incorporation in glutathione during oxidative stress, revealing real-time sulfur cycling dynamics in live mitochondria with 50ms temporal resolution.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 23,
+        "title": "LC-MS/MS in Therapeutic Drug Monitoring",
+        "description": "Precision dosing through quantitative analysis of serum drug levels",
+        "content": "Liquid chromatography-tandem mass spectrometry (LC-MS/MS) has become the gold standard for monitoring narrow therapeutic index drugs. Unlike traditional immunoassays, LC-MS/MS can simultaneously quantify a drug and its metabolites with 99.9% specificity, crucial for agents like tacrolimus (transplant rejection) and vancomycin (antibiotic).\n\nKey components:\n1. Solid-phase extraction removes 98% of serum proteins\n2. C18 columns separate structurally similar compounds\n3. Triple quadrupole MS detects predefined mass transitions\n\nClinicians use trough levels to adjust doses, preventing toxicity while maintaining efficacy. For example, cyclosporine levels maintained at 100-400ng/mL reduce kidney transplant rejection by 60% compared to empirical dosing. Recent advances in automated sample preparation now enable same-day results for critical care patients.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 24,
+        "title": "Mass Spectrometry Imaging for Cancer Margins",
+        "description": "Intraoperative tumor detection through spatial lipidomics",
+        "content": "MALDI-TOF mass spectrometry imaging helps surgeons distinguish cancerous tissue in real-time during tumor resection. The technique:\n\n1. Applies matrix crystals to fresh tissue sections\n2. Lasers desorb/ionize molecules from specific locations\n3. Creates molecular maps showing cancer biomarkers\n\nKey diagnostic lipids like phosphatidylinositol (38:4) show 95% correlation with histopathology in glioma surgery. This prevents unnecessary tissue removal in delicate brain regions, preserving neurological function. Current systems can analyze a 1cm² tissue area in 4 minutes, compared to 30+ minutes for frozen sections.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 25,
+        "title": "Newborn Screening with MS/MS",
+        "description": "Early detection of inherited metabolic disorders from bloodspots",
+        "content": "Tandem MS analysis of dried blood spots identifies 50+ genetic disorders in neonates before symptoms appear. The process:\n\n1. 3.2mm punch from Guthrie card\n2. Butanol extraction of amino acids/acylcarnitines\n3. Flow injection analysis with MRM detection\n\nCritical markers include:\n- Phenylalanine (PKU): >120μM requires treatment\n- C5-OH carnitine (glutaric acidemia type 1)\n- C8-C10 ratios (MCAD deficiency)\n\nEarly dietary interventions based on MS/MS results prevent developmental delays in 89% of cases. Modern systems process 500 samples/day with <2% false positives, making population-wide screening feasible.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 26,
+        "title": "HRMS in Pharmacogenomics",
+        "description": "Personalizing medications through metabolic phenotype analysis",
+        "content": "High-resolution mass spectrometry (HRMS) identifies genetic variations affecting drug metabolism by measuring:\n\n- CYP450 enzyme activity via probe drug conversion\n- Nucleotide metabolites indicating DPYD deficiency (5-FU toxicity)\n- Warfarin hydroxylation ratios\n\nFor example:\n- Poor CYP2C19 metabolizers require 50% lower clopidogrel doses\n- Ultrarapid CYP2D6 metabolizers need codeine alternatives\n\nClinicians combine HRMS data with genomic testing to create personalized dosing regimens, reducing adverse drug reactions by 73% in polypharmacy patients.",
+        "image": "default.jpg"
+    },
+    {
+        "id": 27,
+        "title": "Rapid Pathogen ID with LC-HRMS",
+        "description": "Accelerating antibiotic selection through microbial proteomics",
+        "content": "Liquid chromatography-high resolution MS identifies bacteria 24hr faster than culture methods by analyzing:\n\n1. Ribosomal proteins (unique mass fingerprints)\n2. β-lactamase enzymes (antibiotic resistance)\n3. Toxin production (e.g., Panton-Valentine leukocidin)\n\nClinical impact:\n- MRSA vs MSSA identification in 2hr (vs 48hr cultures)\n- Detection of carbapenemase enzymes (KPC, NDM)\n- Vancomycin MIC prediction through peptidoglycan analysis\n\nEmergency departments using LC-HRMS reduce broad-spectrum antibiotic use by 40% while improving sepsis survival rates by 15%.",
+        "image": "default.jpg"
+    }
     ]

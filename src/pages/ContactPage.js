@@ -11,6 +11,7 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus('Sending...');
 
     try {
       const response = await fetch('http://localhost:5000/send-email', {
@@ -20,42 +21,62 @@ const ContactPage = () => {
       });
 
       if (response.ok) {
-        setStatus('Message sent successfully!');
+        setStatus('Message sent successfully! 🎉');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('Failed to send message.');
+        setStatus('Failed to send message. Please try again.');
       }
     } catch (error) {
-      setStatus('An error occurred.');
+      setStatus('An error occurred. Please check your connection.');
     }
   };
 
   return (
-    <div
-      style={{
-        padding: '40px',
-        maxWidth: '600px',
-        margin: '0 auto',
-        fontFamily: "'Poppins', sans-serif",
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-        borderRadius: '10px',
-        backgroundColor: '#fdfdfd',
-      }}
-    >
-      <h1
-        style={{
-          textAlign: 'center',
-          marginBottom: '30px',
-          color: '#1976d2',
-          fontSize: '2rem',
-        }}
-      >
-        Contact Us
-      </h1>
+    <div style={{
+      padding: '2rem',
+      maxWidth: '600px',
+      margin: '2rem auto',
+      fontFamily: "'Inter', sans-serif",
+      borderRadius: '16px',
+      backgroundColor: '#ffffff',
+      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+    }}>
+      <header style={{
+        textAlign: 'center',
+        marginBottom: '2.5rem',
+        paddingBottom: '1.5rem',
+        borderBottom: '2px solid #f0f0f0'
+      }}>
+        <h1 style={{
+          margin: 0,
+          fontSize: '2.25rem',
+          fontWeight: 700,
+          color: '#1a1a1a',
+          letterSpacing: '-0.025em',
+        }}>
+          Get in Touch
+        </h1>
+        <p style={{
+          marginTop: '0.5rem',
+          color: '#666',
+          fontSize: '1rem',
+          fontWeight: 400,
+        }}>
+          We'll get back to you within 24 hours
+        </p>
+      </header>
 
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <label>
-          <span style={{ fontSize: '1rem', fontWeight: '500', color: '#333' }}>Name:</span>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <div style={{ position: 'relative' }}>
+          <label style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            color: '#404040',
+          }}>
+            Name
+          </label>
           <input
             type="text"
             name="name"
@@ -64,16 +85,27 @@ const ContactPage = () => {
             required
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '0.875rem',
               borderRadius: '8px',
-              border: '1px solid #ccc',
-              fontSize: '1rem',
+              border: '1px solid #e0e0e0',
+              fontSize: '0.9375rem',
+              transition: 'all 0.2s ease',
+              backgroundColor: '#fafafa',
             }}
+            placeholder="John Doe"
           />
-        </label>
+        </div>
 
-        <label>
-          <span style={{ fontSize: '1rem', fontWeight: '500', color: '#333' }}>Email:</span>
+        <div style={{ position: 'relative' }}>
+          <label style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            color: '#404040',
+          }}>
+            Email
+          </label>
           <input
             type="email"
             name="email"
@@ -82,52 +114,83 @@ const ContactPage = () => {
             required
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '0.875rem',
               borderRadius: '8px',
-              border: '1px solid #ccc',
-              fontSize: '1rem',
+              border: '1px solid #e0e0e0',
+              fontSize: '0.9375rem',
+              transition: 'all 0.2s ease',
+              backgroundColor: '#fafafa',
             }}
+            placeholder="john@example.com"
           />
-        </label>
+        </div>
 
-        <label>
-          <span style={{ fontSize: '1rem', fontWeight: '500', color: '#333' }}>Message:</span>
+        <div style={{ position: 'relative' }}>
+          <label style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            color: '#404040',
+          }}>
+            Message
+          </label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             required
-            rows="5"
+            rows="6"
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '0.875rem',
               borderRadius: '8px',
-              border: '1px solid #ccc',
-              fontSize: '1rem',
+              border: '1px solid #e0e0e0',
+              fontSize: '0.9375rem',
+              transition: 'all 0.2s ease',
+              backgroundColor: '#fafafa',
+              resize: 'vertical',
             }}
+            placeholder="Write your message here..."
           />
-        </label>
+        </div>
 
         <button
           type="submit"
           style={{
-            padding: '15px',
-            backgroundColor: '#1976d2',
-            color: '#fff',
-            fontSize: '1rem',
+            padding: '1rem 2rem',
+            backgroundColor: '#2563eb',
+            color: '#ffffff',
+            fontSize: '0.9375rem',
+            fontWeight: 600,
             border: 'none',
             borderRadius: '8px',
             cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            ':hover': {
+              backgroundColor: '#1d4ed8',
+              transform: 'translateY(-1px)',
+              boxShadow: '0 4px 12px rgba(37, 99, 235, 0.2)',
+            },
           }}
         >
-          Submit
+          Send Message
         </button>
       </form>
 
       {status && (
-        <p style={{ textAlign: 'center', marginTop: '20px', color: status.includes('successfully') ? 'green' : 'red' }}>
+        <div style={{
+          marginTop: '1.5rem',
+          padding: '1rem',
+          borderRadius: '8px',
+          backgroundColor: status.includes('🎉') ? '#f0fdf4' : '#fef2f2',
+          border: `1px solid ${status.includes('🎉') ? '#bbf7d0' : '#fecaca'}`,
+          textAlign: 'center',
+          fontSize: '0.875rem',
+          color: status.includes('🎉') ? '#166534' : '#991b1b',
+        }}>
           {status}
-        </p>
+        </div>
       )}
     </div>
   );

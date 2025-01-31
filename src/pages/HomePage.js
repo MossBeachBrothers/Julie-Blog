@@ -1,44 +1,86 @@
 import React, { useState } from 'react';
 import blogs from '../data/blogs.json';
 import BlogCard from '../components/BlogCard';
-import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { Grid, FormControl, InputLabel, Select, MenuItem, Box, TextField } from '@mui/material';
 
 const HomePage = () => {
   const [sortOrder, setSortOrder] = useState('mostRecent');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const sortedBlogs = [...blogs].sort((a, b) => 
-    sortOrder === 'mostRecent' ? b.id - a.id : a.id - b.id
-  );
+  const filteredAndSortedBlogs = [...blogs]
+    .filter(blog => 
+      blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      blog.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => 
+      sortOrder === 'mostRecent' ? b.id - a.id : a.id - b.id
+    );
 
   return (
-    <div
-      className="container"
-      style={{
-        padding: '10px',
-        backgroundColor: '#e3f8ff',
+    <Box
+      sx={{
+        p: 2,
+        backgroundColor: '#f5f5f5',
         minHeight: '100vh',
       }}
     >
-      <FormControl variant="outlined" style={{ marginBottom: '10px', minWidth: 180 }}>
-        <InputLabel>Sort By</InputLabel>
-        <Select
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-          label="Sort By"
+      <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+        <TextField
+          variant="outlined"
+          size="small"
+          placeholder="Search blogs..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          sx={{ 
+            flexGrow: 1,
+            maxWidth: 400,
+            backgroundColor: 'white',
+            borderRadius: 1,
+            '& .MuiOutlinedInput-root': {
+              borderRadius: 1
+            }
+          }}
+        />
+
+        <FormControl 
+          variant="outlined" 
+          size="small" 
+          sx={{ 
+            minWidth: 180,
+            backgroundColor: 'white',
+            borderRadius: 1
+          }}
         >
-          <MenuItem value="mostRecent">Most Recent</MenuItem>
-          <MenuItem value="leastRecent">Least Recent</MenuItem>
-        </Select>
-      </FormControl>
+          <InputLabel>Sort By</InputLabel>
+          <Select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+            label="Sort By"
+          >
+            <MenuItem value="mostRecent">Most Recent</MenuItem>
+            <MenuItem value="leastRecent">Least Recent</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
 
       <Grid container spacing={1.5}>
-        {sortedBlogs.map((blog) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={blog.id}>
-            <BlogCard blog={blog} />
+        {filteredAndSortedBlogs.map((blog) => (
+          <Grid item key={blog.id} xs={6} sm={4} md={3} lg={2}>
+            <BlogCard 
+              blog={blog}
+              sx={{
+                height: '100%',
+                transition: 'transform 0.2s',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: 2
+                }
+              }}
+            />
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 };
 
