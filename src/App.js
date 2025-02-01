@@ -8,9 +8,9 @@ import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
 
 const nanoTheme = createTheme({
-  spacing: 1.5, // Extreme compact spacing
+  spacing: 1.5,
   typography: {
-    fontSize: 8, // Ultra-small base size
+    fontSize: 8,
     h1: { fontSize: '0.85rem', lineHeight: 1 },
     h2: { fontSize: '0.75rem', lineHeight: 1 },
     h3: { fontSize: '0.7rem', lineHeight: 1 },
@@ -80,7 +80,10 @@ const App = () => (
         minHeight: '117.65vh'
       }}>
         <Header />
-        <div style={{ padding: '1px' }}>
+        <div style={{ 
+          padding: '1px',
+          marginTop: '20px' // ADDED THIS LINE
+        }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

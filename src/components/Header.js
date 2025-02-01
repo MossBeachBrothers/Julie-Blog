@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import backgroundImage from '../assets/images/background_image_biology_corner.jpg'; // Import the image directly
+import backgroundImage from '../assets/images/background_image_biology_corner.jpg';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '300px',
+        height: '200px',
         color: '#ffffff',
       }}
     >
@@ -20,18 +20,24 @@ const Header = () => {
         style={{
           backgroundColor: 'transparent',
           boxShadow: 'none',
+          height: '100%', // Add this to contain all elements
         }}
       >
-        <Toolbar style={{ flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-          {/* Main Title */}
+        <Toolbar style={{ 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          padding: '10px 20px', // Reduced vertical padding
+          height: '100%',
+          justifyContent: 'center' // Center content vertically
+        }}>
           <Typography
             variant="h4"
             style={{
               fontWeight: 'bold',
               fontFamily: "'Dancing Script', cursive",
-              fontSize: '3rem',
+              fontSize: '2.5rem', // Slightly reduced font size
               textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
-              padding: '10px 20px',
+              padding: '8px 16px', // Reduced padding
               borderRadius: '8px',
               border: '2px solid #ffffff',
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -40,16 +46,15 @@ const Header = () => {
             Julie's Corner
           </Typography>
 
-          {/* Subtitle */}
           <Typography
             variant="subtitle1"
             style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: '1.5rem',
+              fontFamily: "'Lato', sans-serif",
+              fontSize: '1.2rem', // Reduced font size
               color: '#e3f2fd',
-              marginTop: '15px',
+              marginTop: '10px', // Reduced margin
               textAlign: 'center',
-              padding: '5px 15px',
+              padding: '4px 12px', // Reduced padding
               borderRadius: '8px',
               border: '2px solid #ffffff',
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -58,14 +63,13 @@ const Header = () => {
             Personal Blog for Education on Medical and Biological Concepts
           </Typography>
 
-          {/* Navigation Links */}
           <div
             style={{
-              marginTop: '20px',
+              marginTop: '15px', // Reduced margin
               display: 'flex',
-              gap: '15px',
+              gap: '12px', // Reduced gap
               justifyContent: 'center',
-              padding: '10px',
+              padding: '8px', // Reduced padding
               border: '2px solid #ffffff',
               borderRadius: '8px',
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -74,10 +78,10 @@ const Header = () => {
             <Link
               to="/"
               style={{
-                padding: '10px 15px',
+                padding: '8px 12px', // Reduced padding
                 color: '#e3f2fd',
                 textDecoration: 'none',
-                fontSize: '1.2rem',
+                fontSize: '1rem', // Reduced font size
                 border: '2px solid #e3f2fd',
                 borderRadius: '5px',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -91,10 +95,10 @@ const Header = () => {
             <Link
               to="/about"
               style={{
-                padding: '10px 15px',
+                padding: '8px 12px',
                 color: '#e3f2fd',
                 textDecoration: 'none',
-                fontSize: '1.2rem',
+                fontSize: '1rem',
                 border: '2px solid #e3f2fd',
                 borderRadius: '5px',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -108,10 +112,10 @@ const Header = () => {
             <Link
               to="/contact"
               style={{
-                padding: '10px 15px',
+                padding: '8px 12px',
                 color: '#e3f2fd',
                 textDecoration: 'none',
-                fontSize: '1.2rem',
+                fontSize: '1rem',
                 border: '2px solid #e3f2fd',
                 borderRadius: '5px',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',

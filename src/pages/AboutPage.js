@@ -1,43 +1,102 @@
 import React from 'react';
-import aboutData from '../data/about.json'; // Import JSON directly
-import '../assets/images/default.jpg'; // Import assets for proper build inclusion
+import aboutData from '../data/about.json';
+import { Box, Paper, Typography, Divider } from '@mui/material';
 
 const AboutPage = () => {
-  // Replace \n with <br /> for proper line breaks
+  // Image handling
+  const imagePath = require(`../assets/images/${aboutData.image}`).default;
+
+  // Content formatting with proper line breaks
   const formattedContent = aboutData.content.split('\n').map((line, index) => (
-    <p key={index} style={{ marginBottom: '1.5rem', fontSize: '1.2rem', color: '#333' }}>
-      {line}
-    </p>
-  ));
-
-  // Construct image path
-  const imagePath = require(`../assets/images/${aboutData.image}`);
-
-  return (
-    <div
-      style={{
-        padding: '20px',
-        fontFamily: "'Arial', sans-serif",
-        maxWidth: '800px',
-        margin: '0 auto',
+    <Typography 
+      key={index}
+      paragraph
+      sx={{
+        fontSize: '1.1rem',
+        lineHeight: 1.8,
+        color: 'text.secondary',
+        mb: 3,
+        textAlign: 'justify'
       }}
     >
-      <h1 style={{ textAlign: 'center', color: '#1976d2', marginBottom: '20px' }}>
-        {aboutData.title}
-      </h1>
-      <img
-        src={imagePath}
-        alt="About Me"
-        style={{
-          display: 'block',
-          margin: '0 auto 20px',
-          maxWidth: '200px',
-          borderRadius: '50%',
-          boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+      {line}
+    </Typography>
+  ));
+
+  return (
+    <Box
+      sx={{
+        p: 3,
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        bgcolor: 'background.default'
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          p: { xs: 2, md: 4 },
+          maxWidth: 800,
+          width: '100%',
+          borderRadius: 2,
+          bgcolor: 'background.paper'
         }}
-      />
-      <div style={{ lineHeight: '1.8', textAlign: 'justify' }}>{formattedContent}</div>
-    </div>
+      >
+        {/* Title Section */}
+        <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Typography 
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              color: 'primary.main',
+              mb: 2,
+              fontSize: { xs: '2rem', md: '2.5rem' }
+            }}
+          >
+            {aboutData.title}
+          </Typography>
+          <Divider sx={{ mb: 4, mx: 'auto', width: '60%' }} />
+        </Box>
+
+        {/* Image Section */}
+        <Box sx={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          mb: 4,
+          transition: 'transform 0.3s ease',
+          '&:hover': {
+            transform: 'scale(1.02)'
+          }
+        }}>
+          <Box
+            component="img"
+            src={imagePath}
+            alt="Profile"
+            sx={{
+              width: 200,
+              height: 200,
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: '4px solid',
+              borderColor: 'primary.light',
+              boxShadow: 3
+            }}
+          />
+        </Box>
+
+        {/* Content Section */}
+        <Box sx={{
+          px: { xs: 0, md: 4 },
+          '& p:last-child': {
+            mb: 0
+          }
+        }}>
+          {formattedContent}
+        </Box>
+      </Paper>
+    </Box>
   );
 };
 
